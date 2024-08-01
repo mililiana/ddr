@@ -1,0 +1,21 @@
+---
+title: "Interactive Map Example"
+output: html_document
+date: "`r Sys.Date()`"
+---
+## Interactive Map with Leaflet
+
+This page was created on `r Sys.Date()`.
+
+```{r setup, include=FALSE}
+library(leaflet)
+```
+
+# Create a leaflet map
+```{r leaflet-map, echo=FALSE}
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  setView(lng = -74.0060, lat = 40.7128, zoom = 13) %>%
+  addMarkers(lng = -74.0060, lat = 40.7128, popup = "New York City")
+```
+
